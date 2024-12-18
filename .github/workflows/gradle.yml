@@ -28,6 +28,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Generate dummy report
+      shell: bash
+      run: |
+          echo "<html><head><title>Abc1 Report</title></head><body><h1>Abc1 Report</h1></body></html>" >> abc-1-report.html
+
+
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
