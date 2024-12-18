@@ -31,13 +31,13 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          echo "<html><head><title>Abc1 Report</title></head><body><h1>Abc1 Report</h1></body></html>" >> index.html 
+          echo "<html><head><title>Abc1 Report</title></head><body><h1>Abc1 Report</h1></body></html>" >> report/index.html 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./index.html 
+          source: ./
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
