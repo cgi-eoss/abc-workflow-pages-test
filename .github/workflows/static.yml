@@ -31,6 +31,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Generate dummy report
+        shell: bash
+        run: |
+          echo "<html><head><title>Abc1 Report</title></head><body><h1>Abc1 Report</h1></body></html>" >> index.html 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
