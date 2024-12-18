@@ -31,9 +31,10 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          mkdir $PWD/reports
-          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> $PWD/reports/index3.html 
-          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> $PWD/reports/index4.html 
+          mkdir reports
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> reports/index3.html 
+          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> reports/index4.html 
+          ls -l reports
         
       # - name: Setup Pages
       #   uses: actions/configure-pages@v5
@@ -50,7 +51,7 @@ jobs:
         if: always()
         with:
          name: my-artifact
-         path: $PWD/reports/index3.html
+         path: reports/index3.html
 
   # Deployment job
   # deploy:
