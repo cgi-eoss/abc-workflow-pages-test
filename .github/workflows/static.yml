@@ -31,15 +31,15 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 Report</h1></body></html>" >> index5.html 
-          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 Report</h1></body></html>" >> index6.html 
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> index5.html 
+          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> index6.html 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ./_site
+          destination: ./_site/allure-reports
           keep_files: '*.html'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
