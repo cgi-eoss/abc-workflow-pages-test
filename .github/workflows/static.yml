@@ -31,8 +31,8 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 Report</h1></body></html>" >> index3.html 
-          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 Report</h1></body></html>" >> index4.html 
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 Report</h1></body></html>" >> index5.html 
+          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 Report</h1></body></html>" >> index6.html 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
@@ -40,6 +40,7 @@ jobs:
         with:
           source: ./
           destination: ./_site
+          keep_files: '*.html'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
