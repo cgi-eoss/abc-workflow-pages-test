@@ -31,9 +31,10 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          mkdir reports
-          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> reports/index3.html 
-          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> reports/index4.html 
+          mkdir $PWD/reports
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> $PWD/reports/index3.html 
+          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> $PWD/reports/index4.html 
+        
       # - name: Setup Pages
       #   uses: actions/configure-pages@v5
       # - name: Build with Jekyll
@@ -43,21 +44,22 @@ jobs:
       #     destination: ./_site/allure-reports/test2
       # - name: Upload artifact
       #   uses: actions/upload-pages-artifact@v3
+      
       - name: Upload reports
         uses: actions/upload-artifact@v4
         if: always()
         with:
-         name: build-reports
-         path: reports
+         name: my-artifact
+         path: $PWD/reports/index3.html
 
   # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
