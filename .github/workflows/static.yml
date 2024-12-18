@@ -31,8 +31,8 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          echo "<html><head><title>Abc1 Report</title></head><body><h1>Abc1 Report</h1></body></html>" >> index.html 
-          echo "<html><head><title>Abc2 Report</title></head><body><h1>Abc2 Report</h1></body></html>" >> index2.html 
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 Report</h1></body></html>" >> index3.html 
+          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 Report</h1></body></html>" >> index4.html 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
