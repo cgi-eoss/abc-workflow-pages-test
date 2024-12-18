@@ -31,8 +31,8 @@ jobs:
       - name: Generate dummy report
         shell: bash
         run: |
-          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> index7.html 
-          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> index8.html 
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> index9.html 
+          echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> index10.html 
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
@@ -40,7 +40,7 @@ jobs:
         with:
           source: ./
           destination: ./_site/allure-reports
-          keep_files: '*.html'
+          keep_files: destination
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
