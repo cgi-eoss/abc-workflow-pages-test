@@ -32,7 +32,7 @@ jobs:
         shell: bash
         run: |
           mkdir reports
-          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportXXXX</h1></body></html>" >> reports/index3.html 
+          echo "<html><head><title>Abc3 Report</title></head><body><h1>Abc3 ReportNEWEST</h1></body></html>" >> reports/index3.html 
           echo "<html><head><title>Abc4 Report</title></head><body><h1>Abc4 ReportXXXXXX</h1></body></html>" >> reports/index4.html 
           ls -l reports
         
@@ -56,7 +56,7 @@ jobs:
          overwrite: true
 
       - name: Output artifact ID
-        run:  echo 'Artifact URL is ${{ steps.artifact-upload-step.outputs.url }}'
+        run:  echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-url }}'
 
   # Deployment job
   # deploy:
